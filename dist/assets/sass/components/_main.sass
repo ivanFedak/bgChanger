@@ -1,0 +1,155 @@
+.main
+    @include adaptiv-value('padding-top', 200, 150, 1)
+    @include adaptiv-value('padding-bottom', 100, 50, 1)
+    &__container
+    &__body 
+        display: flex
+        justify-content: center
+        flex-direction: column
+    &__change-btn
+        border: 5px solid #fff
+
+        align-self: center
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+        padding: 10px 25px
+        background: none
+        border-radius: 50px
+        transition: all 0.3s ease 0s
+        
+        color: #fff
+        text-transform: uppercase
+        font-size: 20px
+        
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 60, 40, 1)
+        @media (any-hover: hover )
+            &:hover
+                background: #fff
+                color: #000
+    &__form
+        width: 100%
+        display: flex
+        @media (max-width: $md4 + px)//Less 479
+           flex-direction: column
+    &__input
+        flex: 1 1 auto
+        border-radius: 5px
+        padding: 10px
+        border: 1px solid #ccc
+        border-top-right-radius: 0px
+        border-bottom-right-radius: 0px
+    &__btn
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+        min-width: 50px
+        padding: 10px
+        background: none
+        border-radius: 10px
+        transition: all 0.3s ease 0s
+        
+        border: 5px solid #fff
+        
+        border-top-left-radius: 0px
+        border-bottom-left-radius: 0px
+
+        color: #fff
+        margin-left: 10px
+        @media (any-hover: hover )
+            &:hover
+                background: #fff
+                color: #000
+        @media (max-width: $md4 + px)//Less 479
+           margin: 15px 0 0 0
+           border-radius: 5px
+    &__error
+        margin-top: 20px
+        align-self: flex-start
+        background: #9a2323
+        color: #fff
+        font-size: 20px
+        font-weight: 500
+        padding: 10px
+        border-radius: 3px
+        display: none
+
+.main-block
+    margin-top: 35px
+    display: flex
+    align-items: flex-start
+    @media (max-width: $md3 + px) //Less 768
+        flex-direction: column
+        align-items: stretch
+
+    &__palette // wrapper
+        flex: 1 1 auto
+        background: #ffffff
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+        border-radius: 2px
+
+        padding: 10px
+        display: grid
+        grid-gap: 10px
+        grid-template-columns: repeat(auto-fit, minmax(80px, 90px))
+        @media (max-width: $md3 + px) //Less 768
+           justify-content: center
+
+    &__item  //items
+        border-radius: 3px
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px
+        cursor: pointer
+
+
+        min-width: 80px
+        min-height: 60px
+
+        @media (any-hover: hover )
+            &:hover
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px
+        &:nth-child(1)
+            background-color: #ff7a7a
+        &:nth-child(2)
+            background-color: #3f8ec2
+        &:nth-child(3)
+            background-color: #ffff7a
+        &:nth-child(4)
+            background-color: #ff9bf8
+        &:nth-child(5)
+            background-color: #336891
+    &__btn
+        margin-left: 15px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+        min-width: 120px
+        padding: 10px
+        background: #fff
+        border: 4px solid #ffffff00
+        border-radius: 4px
+        transition: all 0.3s ease 0s
+        
+        color: #233
+        font-size: 20px
+        font-weight: 500
+        @media (max-width: $md3 + px) //Less 768
+            margin: 15px 0 0 0
+        @media (any-hover: hover )
+           &:hover
+               background: none
+               border: 4px solid #fff
+               color: #ffffff
+              
+
+
+
+
+.main__error_active
+    display: block
