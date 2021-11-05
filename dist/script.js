@@ -1505,6 +1505,7 @@ __webpack_require__.r(__webpack_exports__);
 var blockChange = function blockChange() {
   var btns = document.querySelectorAll('.main-block__item'),
       wrap = document.querySelector('.body-html'),
+      result = document.querySelector('.main-block__result'),
       randomBtn = document.querySelector('.main-block__btn');
 
   function randomColor(e) {
@@ -1512,26 +1513,14 @@ var blockChange = function blockChange() {
     // color: rgb(red, green, blue)
     // color: rgb(255, 255, 255) --- white
     // color: rgb(0, 0, 0) --- black
-    // let first = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
-    // let second = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
-    // let third = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
-    // let forth = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
-    // let fiveth = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
-    // btns[0].style.backgroundColor = first
-    // btns[1].style.backgroundColor = second
-    // btns[2].style.backgroundColor = third
-    // btns[3].style.backgroundColor = forth
-    // btns[4].style.backgroundColor = fiveth
     btns.forEach(function (item) {
       var rand = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
       item.style.backgroundColor = rand;
-    }); // for (let i = 0; i < btns.length; i++) {
-    //     let rand = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
-    //     btns[i].style.backgroundColor = rand
-    // }
+    });
   }
 
-  randomColor();
+  randomColor(); // let inerval = setInterval(randomColor,5000)
+
   btns.forEach(function (item, i) {
     item.addEventListener('click', function (e) {
       wrap.style.backgroundColor = window.getComputedStyle(e.target).backgroundColor; // randomColor();
@@ -1541,6 +1530,9 @@ var blockChange = function blockChange() {
   });
   randomBtn.addEventListener('click', function (e) {
     randomColor();
+  });
+  document.addEventListener('click', function (e) {
+    result.textContent = wrap.style.backgroundColor;
   });
 };
 
@@ -1596,9 +1588,8 @@ var change = function change() {
       error.classList.add('main__error_active'); //show error
     } else {
       error.classList.remove('main__error_active');
+      wrap.style.backgroundColor = value;
     }
-
-    wrap.style.backgroundColor = value;
   }
 
   changeBtn.addEventListener('click', function (e) {

@@ -122,8 +122,12 @@
             background-color: #ff9bf8
         &:nth-child(5)
             background-color: #336891
+    &__options
+        display: flex
+        flex-direction: column
+        @media (min-width: $md3 + px)//More 768
+            margin-left: 15px
     &__btn
-        margin-left: 15px
         display: flex
         flex-direction: column
         align-items: center
@@ -146,9 +150,13 @@
                background: none
                border: 4px solid #fff
                color: #ffffff
-              
-
-
+    &__result
+        border-radius: 4px
+        margin-top: 20px
+        padding: 10px
+        background: #fff
+        color: #233
+        font-weight: 600
 
 
 .main__error_active

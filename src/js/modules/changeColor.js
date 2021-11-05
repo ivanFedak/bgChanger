@@ -30,9 +30,9 @@ const change = ()=>{
             error.classList.add('main__error_active'); //show error
         }else{   
             error.classList.remove('main__error_active');
+            wrap.style.backgroundColor = value;
         }
 
-        wrap.style.backgroundColor = value;
     }
 
 
